@@ -191,3 +191,4 @@ Support
 If you like my work, please support the project by donating.
 
 - https://gratipay.com/~architv
+THomas Manalil
