@@ -4,7 +4,7 @@ import json
 
 import click
 
-from soccer  import leagueids
+from soccer import leagueids
 from soccer.exceptions import IncorrectParametersException
 from soccer.writers import get_writer
 from soccer.request_handler import RequestHandler
@@ -24,7 +24,7 @@ TEAM_NAMES = {team["code"]: team["id"] for team in TEAM_DATA}
 
 
 def get_input_key():
-    """Input API key and validate."""
+    """Input API key and validate"""
     click.secho("No API key found!", fg="yellow", bold=True)
     click.secho("Please visit {0} and get an API token.".format(RequestHandler.BASE_URL),
                 fg="yellow", bold=True)
@@ -197,3 +197,4 @@ def main(league, time, standings, team, live, use12hour, players,
 if __name__ == '__main__':
     main()
     'Thomas Comment'
+    'Thomas Second Comment'
