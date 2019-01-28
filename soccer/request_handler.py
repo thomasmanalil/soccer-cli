@@ -8,7 +8,7 @@ class RequestHandler(object):
     BASE_URL = 'http://api.football-data.org/v1/'
     LIVE_URL = 'http://soccer-cli.appspot.com/'
 
-    def __init__(self, headers, league_ids, team_names, writer):
+    def __init__(self, headers, league_ids, team_names, writer): 
         self.headers = headers
         self.league_ids = league_ids
         self.team_names = team_names
