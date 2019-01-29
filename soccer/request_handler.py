@@ -9,6 +9,10 @@ class RequestHandler(object):
     LIVE_URL = 'http://soccer-cli.appspot.com/'
 
     def __init__(self, headers, league_ids, team_names, writer):
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 350ac54895c12cac84c263e7d270b4367ac191a9
         self.headers = headers
         self.league_ids = league_ids
         self.team_names = team_names
