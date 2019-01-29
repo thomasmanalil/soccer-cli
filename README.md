@@ -7,7 +7,7 @@ Soccer CLI
 
 [![PyPI version](https://badge.fury.io/py/soccer-cli.svg)](http://badge.fury.io/py/soccer-cli) [![Join the chat at https://gitter.im/architv/soccer-cli](https://badges.gitter.im/architv/soccer-cli.svg)](https://gitter.im/architv/soccer-cli?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-Soccer for Hackers - a CLI for all the football scores. 
+Soccer for Hackers - a CLI for all the football scores.
 
 ![](http://i.imgur.com/9QbcUrj.gif)
 
@@ -16,19 +16,6 @@ Install
 
 An API key from [football-data.org](http://api.football-data.org/) will be required and you can register for one [here](http://api.football-data.org/client/register).
 
-### Using `pip`
-
-```bash
-$ pip install soccer-cli
-```
-
-Set your API key in an environment variable `SOCCER_CLI_API_TOKEN`
-
-For example:
-
-```bash
-export SOCCER_CLI_API_TOKEN="<YOUR_API_TOKEN>"
-```
 
 ### Build from source
 
@@ -48,7 +35,7 @@ $ cat /home/username/.soccer-cli.ini
 #### Note:
 Currently supports Linux, Mac OS X, NetBSD, FreeBSD and Windows.
 
-To get colorized terminal output on Windows, make sure to install [ansicon](https://github.com/adoxa/ansicon/releases/latest) and [colorama](https://pypi.python.org/pypi/colorama).
+To get colorized terminal output on Windows, make sure to install [ansicon](https://github.com/adoxa/ansicon/releases/latest) and [colorama](https://pypi.org/project/colorama/).
 
 Usage
 ====
@@ -108,7 +95,7 @@ $ soccer --league PL --standings --json # prints the output in json format
 ### Store the ouput in a file
 
 ```bash
-$ soccer --league PL --standings --csv -o 'standings.csv' # stores the ouput in scv format in `standings.csv`
+$ soccer --league PL --standings --csv -o 'standings.csv' # stores the ouput in csv format in `standings.csv`
 ```
 
 ### Help
@@ -117,27 +104,28 @@ $ soccer --help
 ```
 ### List of supported leagues and their league codes
 
+- World:
+  - WC: World Cup (if running/active)
 - Europe:
   - CL: Champions League
+  - EC: European Championships (if running/active)
+- Brazil:
+  - BSA: Brazil Serie A
 - England:
-  - PL: Premier League
-  - EL1: League One
+  - PL: English Premier League
+  - ELC: English Championship
 - France:
-  - FL: Ligue 1
-  - FL2: Ligue 2
+  - FL1: Ligue 1
 - Germany:
   - BL: Bundesliga
-  - BL2: 2. Bundesliga
-  - BL3: 3. Liga
 - Italy:
-  - SA: Serie A 
+  - SA: Serie A
 - Netherlands:
   - DED: Eredivisie
 - Portugal:
   - PPL: Primeira Liga
 - Spain:
   - LLIGA: La Liga
-  - SD: Segunda Division
 
 ### Team and team codes
 
@@ -174,13 +162,14 @@ Demo
 
 Todo
 ====
-- [ ] Enable cache
-- [ ] Add more test cases
-- [x] Add fixtures for UEFA Champions League
-- [ ] Add league filter for live scores
-- [x] Color coding for Europa league and differentiation between straight CL and CL playoff spots, and the same for EL spots
-- [x] Add support for team line up
+- [ ] Enable cache.
+- [ ] Add more test cases.
+- [x] Add fixtures for UEFA Champions League.
+- [ ] Add league filter for live scores.
+- [x] Color coding for Europa league and differentiation between straight CL and CL playoff spots, and the same for EL spots.
+- [x] Add support for team line up.
 - [ ] A built in watch feature so you can run once with --live and just leave the program running.
+- [ ] Python 3 support.
 
 Licence
 ====

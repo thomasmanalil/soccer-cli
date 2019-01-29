@@ -26,8 +26,9 @@ TEAM_NAMES = {team["code"]: team["id"] for team in TEAM_DATA}
 def get_input_key():
     """Input API key and validate"""
     click.secho("No API key found!", fg="yellow", bold=True)
-    click.secho("Please visit {0} and get an API token.".format(RequestHandler.BASE_URL),
-                fg="yellow", bold=True)
+    click.secho("Please visit {} and get an API token.".format(RequestHandler.BASE_URL),
+                fg="yellow",
+                bold=True)
     while True:
         confkey = click.prompt(click.style("Enter API key",
                                            fg="yellow", bold=True))
@@ -105,9 +106,9 @@ def list_team_codes():
               help="Shows live scores from various leagues.")
 @click.option('--use12hour', is_flag=True, default=False,
               help="Displays the time using 12 hour format instead of 24 (default).")
-@click.option('--standings', is_flag=True,
+@click.option('--standings', '-s', is_flag=True,
               help="Standings for a particular league.")
-@click.option('--league', '-league', type=click.Choice(LEAGUE_IDS.keys()),
+@click.option('--league', '-l', type=click.Choice(LEAGUE_IDS.keys()),
               help=("Select fixtures from a particular league."))
 @click.option('--players', is_flag=True,
               help="Shows players for a particular team.")
@@ -137,19 +138,18 @@ def main(league, time, standings, team, live, use12hour, players,
     League codes:
 
     \b
+    - WC: World Cup
+    - EC: European Championship
     - CL: Champions League
     - PL: English Premier League
     - ELC: English Championship
-    - EL1: English League One
     - FL1: French Ligue 1
-    - FL2: French Ligue 2
     - BL: German Bundesliga
-    - BL2: 2. Bundesliga
     - SA: Serie A
     - DED: Eredivisie
     - PPL: Primeira Liga
     - PD: Primera Division
-    - SD: Segunda Division
+    - BSA: Brazil Serie A
     """
     headers = {'X-Auth-Token': apikey}
 
@@ -171,7 +171,7 @@ def main(league, time, standings, team, live, use12hour, players,
         if standings:
             if not league:
                 raise IncorrectParametersException('Please specify a league. '
-                                                   'Example --standings --league=EPL')
+                                                   'Example --standings --league=PL')
             if league == 'CL':
                 raise IncorrectParametersException('Standings for CL - '
                                                    'Champions League not supported')
